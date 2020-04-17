@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+    <!-- Mdeum style eitor -->
+
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+    <!-- Custom css -->
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+    <!-- Fonts -->
+
+</head>
+<body>
+
+
+<nav class="container navbar navbar-inverse techfont custom-navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'post_list' %}">My blog</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+
+    </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+              <li><a href="{% url 'post_new' %}">New post</a></li>
+              <li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+              <li><a>{{ user.username }}</a></li>
+           {% else %}
+              <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span></a></li>
+          {% endif %}
+
+      </ul>
+  </div>
+</nav>
+
+<div class="content container jumbotron">
+<div class="row">
+<div class="col-md-8">
+<div class="blog_posts">
+    {% block content %}
+    {% endblock %}
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

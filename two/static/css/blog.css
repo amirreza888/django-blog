@@ -1,0 +1,42 @@
+.techfont{
+    font-familly:'Russo One',sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.bigbrand{
+    font-size: 1.5em;
+}
+
+.centerstage{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader{
+    filter: hue-rotate(0deg);
+    background: linear-gradient(45deg,#0f8,#08f);
+    animation: hue 1000ms infinite linear;
+
+}
+
+.postdate{
+    text-align: center;
+}
+
+.pottitle{
+    font-familly:'Russo One',sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+.postcontent{
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+}
+
+.btn-comment{
+    position: absolute;
+    right: 0px;
+}
+
